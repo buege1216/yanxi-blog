@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li>
+    <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <div class="meta">{{ post.date | date_to_xmlschema | slice: 0, 10 }}{% if post.author %} · {{ post.author }}{% endif %}</div>
+    {% if post.excerpt %}<p class="excerpt">{{ post.excerpt | strip_html | truncate: 90 }}</p>{% endif %}
+  </li>
+  {% else %}
+  <li class="meta">還沒有文章。</li>
+  {% endfor %}
+</ul>

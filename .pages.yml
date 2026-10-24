@@ -1,0 +1,77 @@
+# Pages CMS 後台設定（app.pagescms.org，用 GitHub 登入）
+media:
+  input: assets/img
+  output: /assets/img
+
+content:
+  - name: posts
+    label: 文章
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{url_name}.md"
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: 標題
+        type: string
+        required: true
+      - name: date
+        label: 發布時間
+        type: string
+        readonly: true
+      - name: updated
+        label: 最後編輯時間
+        type: string
+        readonly: true
+      - name: url_name
+        label: 網址名稱
+        type: string
+        required: true
+      - name: author
+        label: 作者
+        type: select
+        required: true
+        options:
+          values:
+            - 言熙
+      - name: body
+        label: 內文
+        type: rich-text
+        options:
+          format: html
+
+  - name: now
+    label: 近況頁
+    type: file
+    path: now.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: 標題
+        type: string
+        required: true
+      - name: body
+        label: 內文（記得改「最後更新」日期）
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: about
+    label: 關於頁
+    type: file
+    path: about.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: 標題
+        type: string
+        required: true
+      - name: body
+        label: 內文
+        type: rich-text
+        options:
+          format: markdown

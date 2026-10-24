@@ -1,0 +1,19 @@
+---
+layout: page
+title: 文章總表
+permalink: /archive/
+---
+<p class="meta">共 {{ site.posts | size }} 篇，依年份、月份排列。</p>
+{% assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+{% for year in by_year %}
+<h2 class="archive-year">{{ year.name }} 年 <span class="meta">（{{ year.items | size }} 篇）</span></h2>
+{% assign by_month = year.items | group_by_exp: "p", "p.date | date: '%m'" %}
+{% for month in by_month %}
+<h3 class="archive-month">{{ month.name | plus: 0 }} 月</h3>
+<ul class="archive-list">
+  {% for post in month.items %}
+  <li><span class="meta">{{ post.date | date: '%m-%d' }}</span> <a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.author %} <span class="meta">· {{ post.author }}</span>{% endif %}</li>
+  {% endfor %}
+</ul>
+{% endfor %}
+{% endfor %}

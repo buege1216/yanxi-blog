@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="icon" href="{{ '/assets/icons/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/assets/icons/favicon-32.png' | relative_url }}" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="{{ '/assets/icons/apple-touch-icon.png' | relative_url }}">
+  <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+    <nav>
+      <a href="{{ '/' | relative_url }}">文章</a>
+      <a href="{{ '/archive/' | relative_url }}">總表</a>
+      <a href="{{ '/about/'| relative_url }}">關於</a>
+      <a href="{{ '/now/' | relative_url }}">近況</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <button type="button" class="theme-toggle" id="theme-toggle"></button>
+    </nav>
+  </header>
+  <main class="wrap">
+    {{ content }}
+  </main>
+  <footer class="site-footer">版權所有 © 2026 言熙</footer>
+  <script>
+    (function () {
+      var root = document.documentElement, btn = document.getElementById('theme-toggle');
+      function label() {
+        var dark = root.dataset.theme === 'dark';
+        btn.textContent = dark ? '☀ 淺色' : '☾ 深色';
+        btn.setAttribute('aria-label', dark ? '切換成淺色模式' : '切換成深色模式');
+      }
+      btn.addEventListener('click', function () {
+        var dark = root.dataset.theme !== 'dark';
+        if (dark) root.dataset.theme = 'dark'; else delete root.dataset.theme;
+        try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+        label();
+      });
+      label();
+    })();
+  </script>
+</body>
+</html>

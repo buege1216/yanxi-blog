@@ -1,0 +1,17 @@
+title: 言熙
+description: 言熙的部落格
+url: https://yanxi.buege.net
+lang: zh-TW
+timezone: Asia/Taipei
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+permalink: /:year/:month/:day/:title/
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+future: true
