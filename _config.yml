@@ -11,6 +11,10 @@ permalink: /:year/:month/:day/:title/
 defaults:
   - scope:
       path: ""
+    values:
+      image: /assets/og-default.png
+  - scope:
+      path: ""
       type: posts
     values:
       layout: post

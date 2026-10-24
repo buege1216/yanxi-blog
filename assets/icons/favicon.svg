@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="10" fill="#141414"/>
-  <path fill="#fff" fill-rule="evenodd" d="M17 10 H40 L47 17 V26 L43 30 L47 34 V47 L40 54 H17 Z M26 18 V27 H37 L38 26 V19 L37 18 Z M26 35 V46 H37 L38 45 V36 L37 35 Z"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#282828"/><text x="32" y="47" font-size="44" font-weight="700" text-anchor="middle" fill="#fff" font-family="Noto Sans TC,Microsoft JhengHei,PingFang TC,sans-serif">言</text></svg>
