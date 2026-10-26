@@ -1,10 +1,10 @@
-:root{color-scheme:light;--bg:#fffdf9;--fg:#2b2622;--muted:#8a7f72;--line:#e2d9c8;--accent:#9a4a2b;--code:#f3eee4}
-html[data-theme="dark"]{color-scheme:dark;--bg:#1c1a17;--fg:#e9e2d6;--muted:#a39886;--line:#38322a;--accent:#d98a64;--code:#2a261f}
+:root{color-scheme:light;--bg:#f6f1e7;--fg:#2b2622;--muted:#5f6b64;--line:#dcd2bf;--accent:#3d6b50;--code:#ece3d3;--brand:#2a3c33}
+html[data-theme="dark"]{color-scheme:dark;--bg:#1a2420;--fg:#f6f1e7;--muted:#a9b3ad;--line:#34433b;--accent:#8fbf9f;--code:#24322b;--brand:#d6e3d9}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.95 "Noto Serif TC","Songti TC",Georgia,serif;letter-spacing:.02em}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
-.site-header{display:flex;justify-content:space-between;align-items:baseline;max-width:680px;margin:0 auto;padding:40px 16px 20px;border-bottom:1px solid var(--line)}
-.site-title{font-size:1.5rem;font-weight:700;color:var(--fg);letter-spacing:.06em}
+.site-header{display:flex;justify-content:space-between;align-items:baseline;max-width:680px;margin:0 auto;padding:40px 16px 20px;border-bottom:2px solid var(--brand)}
+.site-title{font-size:1.5rem;font-weight:700;color:var(--brand);letter-spacing:.06em}
 .site-header nav a{margin-left:18px;color:var(--muted);font-size:.95rem}
 .site-header nav a:hover{color:var(--accent)}
 .wrap{max-width:680px;margin:0 auto;padding:36px 16px}
