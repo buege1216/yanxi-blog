@@ -44,6 +44,31 @@ content:
         options:
           format: html
 
+  - name: drafts
+    label: 草稿(不公開)
+    type: collection
+    path: _drafts
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: 標題
+        type: string
+        required: true
+      - name: author
+        label: 作者
+        type: select
+        options:
+          values:
+            - 言熙
+      - name: body
+        label: 內文
+        type: rich-text
+        options:
+          format: html
+
   - name: now
     label: 近況頁
     type: file
